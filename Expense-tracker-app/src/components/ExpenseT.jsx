@@ -1,21 +1,26 @@
 import './ExpenseT.css'
 import Lottie from 'lottie-react'
 import animation from '../assets/Welcome Animation.json'
+import Login from './Login'
+import { useState } from 'react'
+import { Signup } from './Signup'
 const Welcome = () => {
-  return (
-    <>
+    const [Open , setOpen] = useState(false)
+    const [OpenSi, setOpenSi] = useState(false)
+return (
+<>
     <nav className='nav'>
           <i style={{color:'white' , fontSize:'2.5rem' , marginLeft:'2ch'}}>Expense Tracker</i>
           <div className='button'>
-          <button>
-            Login
-          </button>
-          <button>
-            Sign Up
-          </button>
+            <button onClick={() => setOpen(true)}>
+              Login
+            </button>
+            <button onClick={() => setOpenSi(true)}>
+              Sign up
+            </button>
           </div>
     </nav>
-    <div className='Text' style={{display:'flex' , flexDirection:'row' , justifyContent:'space-around' , alignItems:'center' , alignItems:'center'}}>
+    <div className='Text' style={{display:'flex' , flexDirection:'row' , justifyContent:'space-around' , alignItems:'center'}}>
         <div className='about' style={{marginTop:'30ch' , marginLeft:'10ch'}}>
           <h1 style={{fontSize:'4rem',color:'rgb(35, 60, 107)'}}>Expense Tracker App</h1>
           <p style={{fontSize:'1.5rem', color:'rgb(35, 60, 107)'}}>
@@ -35,8 +40,16 @@ const Welcome = () => {
         </div>
     </div>
     <footer>
-        
+      <p>© 2024 Expense Tracker App. All rights reserved.</p>
     </footer>
+{
+  Open && <Login closeModal={() => setOpen(false)}/>
+}
+{
+  OpenSi && <Signup closeModal = {() => setOpenSi(false)} />
+}
+
+
     </>    
 )
 }

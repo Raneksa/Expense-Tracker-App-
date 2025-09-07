@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import Expense from './components/ExpenseT'
-function App() {
-  const [count, setCount] = useState(0)
+import {Routes , Route} from 'react-router-dom'
 
+function App() {
+  
   return (
     <>
       <Expense />

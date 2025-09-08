@@ -1,6 +1,19 @@
 import React from 'react'
 import '../components/Login.css'
-const Login = ({ closeModal }) => {
+import Dashboard from './Dashboard'
+import { useState } from 'react'
+const Login = ({ closeModal, onLoginSuccess }) => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [inputUsername, setInputUsername] = useState('');
+    const [inputPassword, setInputPassword] = useState('');
+    const handleLogin = (e) => {
+      e.preventDefault();
+        if(inputUsername === 'Nekena' && inputPassword === 'Axen17') {
+            onLoginSuccess();
+        } else {
+            alert('Info Invalide');
+        }
+    }
   return (
 <>
 <div className='Overlay'> 
@@ -10,12 +23,14 @@ const Login = ({ closeModal }) => {
             <h1>Login</h1>
             <p>Glad to see you again !</p>
         </div>
-        <div className='Login-input'>
-            <input type="text" placeholder='UserName' />
-            <input type="password" placeholder='Password' />
-            <button>Login</button>           
+        <form className='Login-input' onSubmit={handleLogin}>
+            <input value={inputUsername} type="text" placeholder='UserName' onChange={e => setInputUsername(e.target.value)}/>
+            <input value={inputPassword} type="password" placeholder='Password' onChange={e => setInputPassword(e.target.value)} />
+            <button type='submit' >
+              Login
+            </button>           
             <p>Forgot Password ??</p>
-        </div>
+        </form>
     </fieldset>
 </div>
 </>

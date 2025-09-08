@@ -4,9 +4,12 @@ import animation from '../assets/Welcome Animation.json'
 import Login from './Login'
 import { useState } from 'react'
 import { Signup } from './Signup'
+
+
 const Welcome = () => {
     const [Open , setOpen] = useState(false)
     const [OpenSi, setOpenSi] = useState(false)
+
 return (
 <>
     <nav className='nav'>
@@ -20,6 +23,7 @@ return (
             </button>
           </div>
     </nav>
+
     <div className='Text' style={{display:'flex' , flexDirection:'row' , justifyContent:'space-around' , alignItems:'center'}}>
         <div className='about' style={{marginTop:'30ch' , marginLeft:'10ch'}}>
           <h1 style={{fontSize:'4rem',color:'rgb(35, 60, 107)'}}>Expense Tracker App</h1>
@@ -39,17 +43,17 @@ return (
           <Lottie animationData={animation} loop={true} style={{borderRadius:'100%' ,textAlign:'center',border:"none", padding:'2ch' , background:' rgb(35, 60, 107)' , boxShadow:'0px 4px 5px black'}}/>        
         </div>
     </div>
+
     <footer>
       <p>© 2024 Expense Tracker App. All rights reserved.</p>
     </footer>
+
 {
   Open && <Login closeModal={() => setOpen(false)}/>
 }
 {
   OpenSi && <Signup closeModal = {() => setOpenSi(false)} />
 }
-
-
     </>    
 )
 }

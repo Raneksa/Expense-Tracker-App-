@@ -12,7 +12,7 @@ const Dashboard = () => {
   return (  
     <>
         <nav className='nav'>
-          <i style={{color:'white' , fontSize:'2.5rem' , marginLeft:'2ch'}}>Expense Tracker</i>
+          <i style={{color:'white' , fontSize:'2.5rem' , marginLeft:'2ch'}}>Dashboard</i>
           <div className='button'>
             <button>
               Logout

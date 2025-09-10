@@ -1,9 +1,7 @@
 import React from 'react'
 import '../components/Login.css'
-import Dashboard from './Dashboard'
 import { useState } from 'react'
 const Login = ({ closeModal, onLoginSuccess }) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [inputUsername, setInputUsername] = useState('');
     const [inputPassword, setInputPassword] = useState('');
     const handleLogin = (e) => {

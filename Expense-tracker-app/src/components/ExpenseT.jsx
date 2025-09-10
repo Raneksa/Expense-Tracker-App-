@@ -1,6 +1,6 @@
 import './ExpenseT.css'
-import Lottie from 'lottie-react'
 import animation from '../assets/Welcome Animation.json'
+import Lottie from 'lottie-react'
 import Login from './Login'
 import { useState } from 'react'
 import { Signup } from './Signup'

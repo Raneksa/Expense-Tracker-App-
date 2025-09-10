@@ -11,11 +11,30 @@ export const Signup = ({ closeModal , onSignupSuccess}) => {
 
     const handleSignup = (e) => {
       e.preventDefault();
-        if(inputUsername && inputEmail && inputPassword && (inputPassword === inputConfirmPassword)) {
-            onSignupSuccess();
-        } else {
-            alert('Info Invalide');
+        if(inputPassword !== inputConfirmPassword) {
+            alert('Passwords do not match');
+            return;
         }
+        if(inputPassword.length < 8) {
+            alert('Password must be at least 8 characters long');
+            return;
+        }
+        if(!/\d/.test(inputPassword)) {
+            alert('Password must contain at least one number');
+            return;
+        }
+        if(!/[!@#$%^&*]/.test(inputPassword)) {
+            alert('Password must contain at least one special character');
+            return;
+        }
+        if(inputUsername === '' || inputEmail === '' || inputPassword === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+         alert('Signup successful!');
+          setInputUsername('');
+          setInputEmail(''); 
+          onSignupSuccess();
     }
   return (
     <div className='Overlay'> 

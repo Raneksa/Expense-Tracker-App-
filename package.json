@@ -1,14 +1,19 @@
 {
-  "name": "et-tracker",
+  "name": "expense-tracker",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "version": "1.0.0",
+  "description": "Application de suivi des dépenses",
+  "main": "dist/backend/server.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "node dist/backend/server.js",
+    "dev": "nodemon src/backend/server.ts",
+    "build": "tsc",
+    "test": "jest"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
   "dependencies": {
     "lottie-react": "^2.4.1",
     "react": "^19.1.1",

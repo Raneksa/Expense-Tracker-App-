@@ -5,7 +5,7 @@ import routeSummary from './routeSummary.js';
 const app = express();
 
 app.use(cors({
-    origin: "http://localhost:5173", // Changé de https à http
+    origin: "http://localhost:8080",
     credentials: true
 }));
 

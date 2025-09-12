@@ -1,9 +1,7 @@
-import express from 'express'; 
 import { PrismaClient } from "@prisma/client";
-const app = express();
 const prisma = new PrismaClient();
 
-app.get("/summary/monthly", async (req, res) => {
+export const getSummaryMonth = async (req, res) => {
   try {
     const { year, month, id } = req.query;
     
@@ -48,10 +46,10 @@ app.get("/summary/monthly", async (req, res) => {
     console.error("Erreur", error);
     res.status(500).json({ error: "Erreur de serveur" });
   }
-});
+};
 
 
-app.get("/summary", async (req, res) => {
+export const getSummary = async (req, res) => {
   try {
     const { start, end, id } = req.query;
     
@@ -112,10 +110,10 @@ app.get("/summary", async (req, res) => {
     console.error("Erreur dans /summary:", error);
     res.status(500).json({ error: "Erreur de serveur" });
   }
-});
+};
 
 
-app.get("/summary/alerts", async (req, res) => {
+export const getSummaryAlert = async (req, res) => {
   try {
     const { id } = req.query;
     
@@ -199,4 +197,4 @@ app.get("/summary/alerts", async (req, res) => {
     console.error("Erreur dans /summary/alerts:", error);
     res.status(500).json({ error: "Erreur de serveur" });
   }
-});
+};
